@@ -11,13 +11,13 @@ my @filename = split(/\.fastq/, $ARGV[0]);
 my $base = $filename[0];
 print "$base\n";
 
-#open(OUT1,">$outFastq");
-#open(OUT2)
+open(OUT1,">$base_index1.fasta");
+open(OUT2,">$base_index2.fasta");
 while (my $line = <IN>) {
   #	if ($line =~ /^@([^\s]+) \d:N:\d:([A-Z]+)\+([A-Z]+)/){
-	if ($line =~ /^(@[^\s]+) \d:N:\d:([A|T|C|G]+)\+([A|T|C|G]+)/){
-    print  "$1\n$2\n";
-    print  "$1\n$3\n";
+	if ($line =~ /^@([^\s]+) \d:N:\d:([A|T|C|G]+)\+([A|T|C|G]+)/){
+    print OUT1 "\>$1\n$2\n";
+    print OUT2 "\>$1\n$3\n";
   }
 }
 close(IN);
