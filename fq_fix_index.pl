@@ -9,7 +9,7 @@ die "usage: fq_fix_index.pl infile.fastq\n Pulls indexes out of header of fastq 
 open(IN, "< $ARGV[0]") or die "can't open file $ARGV[0]\n";
 while (my $line = <IN>) {
 	if ($line =~ /^@([^\s]+)/){
-    print $1;
+    print "$1\n";
   }
 }
 close(IN);
