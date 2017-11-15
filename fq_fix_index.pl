@@ -12,8 +12,8 @@ my @filename = split(/\.fastq/, $filepath[-1]);
 my $base = $filename[0];
 print "$base\n";
 
-open(OUT1,">$base.index1.fasta");
-open(OUT2,">$base.index2.fasta");
+open(OUT1,">$base.index1.fastq");
+open(OUT2,">$base.index2.fastq");
 while (my $line = <IN>) {
   #	if ($line =~ /^@([^\s]+) \d:N:\d:([A-Z]+)\+([A-Z]+)/){
 	if ($line =~ /^@([^\s]+ \d:N:\d):([A|T|C|G]+)\+([A|T|C|G]+)/){
