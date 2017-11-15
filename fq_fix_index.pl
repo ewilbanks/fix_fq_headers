@@ -4,10 +4,11 @@
 use strict;
 use warnings;
 
-die "usage: fq_fix_index.pl infile.fastq\n Pulls indexes out of header of fastq and makes them their own file" unless @ARGV==1;
+die "usage: fq_fix_index.pl infile.fastq\n Pulls indexes out of header of fastq and makes them their own file\n" unless @ARGV==1;
 
 open(IN, "< $ARGV[0]") or die "can't open file $ARGV[0]\n";
-my @filename = split(/\.fastq/, $ARGV[0]);
+my @filepath = split(/\//, $ARGV[0]);
+my @filename = split(/\.fastq/, $filepath[-1]);
 my $base = $filename[0];
 print "$base\n";
 
