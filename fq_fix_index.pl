@@ -10,7 +10,7 @@ open(IN, "< $ARGV[0]") or die "can't open file $ARGV[0]\n";
 while (my $line = <IN>) {
   #	if ($line =~ /^@([^\s]+) \d:N:\d:([A-Z]+)\+([A-Z]+)/){
 	if ($line =~ /^(@[^\s]+) \d:N:\d:([A|T|C|G]+)\+([A|T|C|G]+)/){
-    print "$1\n\$2\n$1\n\$3\n";
+    print "$1\n$2\n$1\n$3\n";
   }
 }
 close(IN);
