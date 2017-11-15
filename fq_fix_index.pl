@@ -15,7 +15,7 @@ open(OUT1,">$base.index1.fasta");
 open(OUT2,">$base.index2.fasta");
 while (my $line = <IN>) {
   #	if ($line =~ /^@([^\s]+) \d:N:\d:([A-Z]+)\+([A-Z]+)/){
-	if ($line =~ /^@([^\s]+) \d:N:\d:([A|T|C|G]+)\+([A|T|C|G]+)/){
+	if ($line =~ /^@([^\s]+ \d:N:\d):([A|T|C|G]+)\+([A|T|C|G]+)/){
     print OUT1 "\>$1\n$2\n";
     print OUT2 "\>$1\n$3\n";
   }
